@@ -10,13 +10,20 @@
 <title>Who's the faker?</title>
 </head>
 <body>
-<div class="jumbotron-fluid bg-dark text-light text-center display-3 py-3">A fake artist goes somewhere</div>
+<div class="jumbotron-fluid bg-dark text-light text-center display-3 py-3">A fake artist goes to New York</div>
 
 <h2 class="text-danger">IMPORTANT: Before you begin, make sure that the person who will be in charge of the game has the device that is using this app.</h2>
 
 <p>So...we wanted to commission an art piece for something. We're not sure what we want it for yet, but all we </p>
 
-<p>We've gathered a group </p>
+<p>We've gathered a group of artists to help us out, but there's a problem: someone showed up uninvited.</p>
+
+<p>We sent out the prompt to everyone beforehand, so that should help us find who our uninvited guest is...but I doubt they'd leave so quickly.</p>
+
+<p>Can you, as a group, produce a fine piece of art while also catching the fake artist? Additionally, if you do catch the fake, can they guess what the prompt was?</p>
+
+<p>If you need the full rules, <a href="index.html">Click Here</a>.</p>
+
 <div class="container">
 <form>
   <div class="form-group">
@@ -28,8 +35,8 @@
     <input type="input" class="form-control" id="fakeArtistCat" placeholder="This is to help your artists with direction.">
   </div>
   <div class="form-group">
-    <label for="numOfArtists">Number of artists</label>
-    <input type="number" class="form-control" id="numOfArtists">
+    <label for="playerNum">Number of artists</label>
+    <input type="number" class="form-control playerNum">
   </div>
   <button id="goArtist" class="btn btn-success">Start</button>
 </form>
@@ -38,5 +45,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="assets/js/game.js"></script>
 </body>
 </html>
