@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<title>Mafia</title>
+</head>
+<body>
+    <div class="jumbotron-fluid bg-dark text-light text-center display-3 py-3">How to Play <b>Mafia</b></div>
+
+    <p>One of the most popular social deduction games of all time, there are many different ways to play <b>Mafia</b>. Here is just one possible ruleset.</p>
+
+    <p>One player will be the moderator for the round. They are a neutral party responsible for making sure the game runs smoothly during the night phase and facilitating discussion without involving themselves during the day phase. This person should be the one to input the number of players, how many mafia there are, and if there are any special roles into the device this app is running on (though this is not necessary). Once everything has been inputted into the app, the device running the app should be passed around to the rest of the players one by one.</p>
+
+    <p class ="appHelp">A screen will come up instructing each player to click a button, after which they will see a screen with their role in the game, as well as an explanation of their role. There will also be a button to move back to the original page, so that players can pass the device around without knowing anyone else's role.</p>
+
+    <p>Once everyone has their roles, the game can begin. A large part of how the game runs is on the moderator, but here's a basic overview:</p>
+
+    <p>The game takes place in two phases: Night and Day. During the Night phase, everyone but the moderator will have their eyes closed unless specifically told to open their eyes based on their role. One by one, the moderator should call on the mafia (as a group) and any special roles that have night actions to wake up and perform their actions:</p>
+
+    <ul>
+        <li>For the mafia, they choose one person to "kill" (eliminate from the game)</li>
+        <li>For the Detective, they choose one person to "investigate" (find out if they are with the mafia or not, as indicated by the moderator)</li>
+        <li>For the Medic, they choose one person to "save" (that person cannot be killed that night)</li>
+        <li>For Cupid, they only wake on night one and choose two people to become "lovers". The lovers then wake to see each other, and have an additional condition added to them: if one dies, the other dies as well.</li>
+    </ul>
+
+    <p>During the day phase, the town discusses who they think could be with the mafia, and at the end of the phase, one player is voted out by the group. This continues until one of the following conditions is met:</p>
+
+    <ul>
+        <li>There are no more mafia remaining in the game, at which point the town wins</li>
+        <li>The number of townspeople and the number of mafia members is equal, at which point the mafia wins</li>
+        <li>In the uncommon case where the lovers are on different teams (i.e. one is town and the other is mafia), they will win if they eliminate everyone else and are the last two alive.</li>
+    </ul>
+
+<a href="mafia.html" class="btn btn-primary">Return to game</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
