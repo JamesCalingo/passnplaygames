@@ -47,6 +47,18 @@ $("#goArtist").on("click", function (e){
   playerArray.push("X - You are the fake artist!")
   console.log(playerArray)
   let role = playerArray[Math.floor(Math.random() * playerArray.length)];
-  alert(role);
+  // alert(role);
+  window.location.href = "player.html"
   }
+})
+
+$(".return").on("click", function (e){
+  e.preventDefault();
+  alert(playerArray)
+if(playerArray = []){
+  window.location.href = "../index.html"
+}
+else{
+  window.location.href = "player.html"
+}
 })
