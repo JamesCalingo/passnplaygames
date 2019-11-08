@@ -2,32 +2,48 @@ var playerArray = [];
 
 $("#goMafia").on("click", function (e){
   e.preventDefault();
-  var numOfPlayers = $(".playerNum").val().trim();
+  let numOfPlayers = $(".playerNum").val().trim();
+  
   if(numOfPlayers <= 0){
     console.log(numOfPlayers)
-    alert("Is this a ghost town?");
+    alert("There's no one in this town? Is this a ghost town?");
     return false
   }
   else{
-  var numOfMafia = $("#mafiaNum").val()
+  let numOfMafia = $("#mafiaNum").val();
+  let detCheck = document.getElementById("detectiveCheck");
+  let medCheck = document.getElementById("medicCheck");
+  let cupidCheck = document.getElementById("cupidCheck")
   console.log(numOfPlayers);
   console.log(numOfMafia);
   for(var i = 0; i < numOfPlayers - numOfMafia; i++){
     playerArray.push("Player")
-  }
+  };
   for(var j = 0; j < numOfMafia; j++){
-    playerArray.push("Mafia")
-  }
+    playerArray.push("Mafia");
+  };
+  if(detCheck.checked == true){
+    playerArray.push("Detective");
+    playerArray.shift()
+  };
+  if(medCheck.checked == true){
+    playerArray.push("Medic");
+    playerArray.shift()
+  };
+  if(cupidCheck.checked == true){
+    playerArray.push("Cupid");
+    playerArray.shift()
+  };
   console.log(playerArray)
   let role = playerArray[Math.floor(Math.random() * playerArray.length)];
   // alert(role);
-  window.location.href = "player.html"
+  // window.location.href = "player.html"
   }
 });
 
 $("#goArtist").on("click", function (e){
   e.preventDefault();
-  var numOfPlayers = $(".playerNum").val().trim();
+  let numOfPlayers = $(".playerNum").val().trim();
   var word = $("#fakeArtistWord").val().trim();
   var category = $("#fakeArtistCat").val().trim()
   if(numOfPlayers <= 0){
