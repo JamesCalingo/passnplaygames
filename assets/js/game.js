@@ -37,7 +37,7 @@ $("#goMafia").on("click", function (e){
   console.log(playerArray)
   let role = playerArray[Math.floor(Math.random() * playerArray.length)];
   // alert(role);
-  // window.location.href = "player.html"
+  window.location.href = "player.html"
   }
 });
 
