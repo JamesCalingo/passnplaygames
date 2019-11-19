@@ -67,14 +67,17 @@ $("#goArtist").on("click", function (e){
   window.location.href = "player.html"
   }
 })
-playerArray.push("a", "b", "c", "d")
+// playerArray.push("a", "b", "c", "d")
 $(".return").on("click", function (e){
   e.preventDefault();
-  alert(playerArray)
 let randNum = Math.floor(Math.random() * playerArray.length)
 let selection = playerArray[randNum]
-$(".role").html(selection)
+let words = "test"
+let category = "also test"
+$(".role").text(words)
+$("#category").text(category)
 playerArray.splice(randNum, 1)
+alert(playerArray)
 if(playerArray.length === 0){
   window.location.href = "../index.html"
 }
