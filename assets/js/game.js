@@ -1,4 +1,6 @@
 var playerArray = [];
+var word;
+var category;
 
 $("#goMafia").on("click", function (e){
   e.preventDefault();
@@ -44,8 +46,8 @@ $("#goMafia").on("click", function (e){
 $("#goArtist").on("click", function (e){
   e.preventDefault();
   let numOfPlayers = $(".playerNum").val().trim();
-  var word = $("#fakeArtistWord").val().trim();
-  var category = $("#fakeArtistCat").val().trim()
+  word = $("#fakeArtistWord").val().trim();
+  category = $("#fakeArtistCat").val().trim()
   if(numOfPlayers <= 0){
     alert("How can you expect art to be produced if we have no artists?");
     return false
@@ -62,23 +64,25 @@ $("#goArtist").on("click", function (e){
   }
   playerArray.push("X - You are the fake artist!")
   console.log(playerArray)
-  let role = playerArray[Math.floor(Math.random() * playerArray.length)];
-  // alert(role);
   window.location.href = "player.html"
   }
 })
 let words = "test"
-let category = "also test"
-$(".role").text(words)
-$("#category").text(category)
-// playerArray.push("a", "b", "c", "d")
-$(".return").on("click", function (e){
+
+
+playerArray.push("test", "test", "test", "YOU DA FAKE")
+$(".findRole").on("click", function (e){
   e.preventDefault();
+  window.location.href = "./role.html"
 let randNum = Math.floor(Math.random() * playerArray.length)
 let selection = playerArray[randNum]
-
+$(".role").text(selection)
+$("#category").text(category)
 playerArray.splice(randNum, 1)
 alert(playerArray)
+})
+
+$(".return").on("click", function(e){
 if(playerArray.length === 0){
   window.location.href = "../index.html"
 }
