@@ -22,7 +22,7 @@ var cupidObj = {
 };
 var tannerObj = {
   name: "Tanner",
-  role: "You're a local tanner...but you're not fond of it. You'd rather be literallly anywhere else but this town right now, but there's one problem: the town kinda needs you to stay at your job. However, with the mafia confusion going around, you figure it's a good time to try and trick the town to buying your one way ticket out of town! \ntl;dr: Your goal is to get voted out by town. If this happens, you win! Note that you do NOT win if the mafia kills you at night.\nWhen you're ready, click the button below and pass the device to the next player."
+  role: "You're a local tanner...but you're not fond of it. You'd rather be literallly anywhere else but this town right now, but there's one problem: the town kinda needs you to stay at your job. However, with the mafia confusion going around, you figure it's a good time to try and trick the town to buying your one way ticket out of town! \ntl;dr: Your goal is to get voted out by town. If this happens, you win! Note that you do NOT win if the mafia kills you at night, and if you're chosen by Cupid, you.\nWhen you're ready, click the button below and pass the device to the next player."
 }
 
 $("#goMafia").on("click", function (e){
