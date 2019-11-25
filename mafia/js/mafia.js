@@ -39,7 +39,8 @@ $("#goMafia").on("click", function (e){
   let numOfMafia = $("#mafiaNum").val();
   let detCheck = document.getElementById("detectiveCheck");
   let medCheck = document.getElementById("medicCheck");
-  let cupidCheck = document.getElementById("cupidCheck")
+  let cupidCheck = document.getElementById("cupidCheck");
+  let tannerCheck = document.getElementById("tannerCheck")
   console.log(numOfPlayers);
   console.log(numOfMafia);
 
@@ -67,13 +68,16 @@ $("#goMafia").on("click", function (e){
     playerArray.push(cupidObj);
     playerArray.shift()
   };
+  if(tannerCheck.checked == true){
+    playerArray.push(tannerObj);
+    playerArray.shift()
+  };
   console.log(playerArray)
-  let role = playerArray[Math.floor(Math.random() * playerArray.length)];
   // alert(role);
   window.location.href = "player.html"
   }
 });
-playerArray.push(playerObj, mafiaObj, detectiveObj, medicObj, cupidObj, tannerObj)
+// playerArray.push(playerObj, mafiaObj, detectiveObj, medicObj, cupidObj, tannerObj)
 $(".findRole").on("click", function (e){
   e.preventDefault();
   if(playerArray.length === 0){
