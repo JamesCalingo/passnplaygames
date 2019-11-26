@@ -25,9 +25,9 @@ var tannerObj = {
   role: "You're a local tanner...but you're not fond of it. You'd rather be literallly anywhere else but this town right now, but there's one problem: the town kinda needs you to stay at your job. However, with the mafia confusion going around, you figure it's a good time to try and trick the town to buying your one way ticket out of town! \ntl;dr: Your goal is to get voted out by town. If this happens, you win! Note that you do NOT win if the mafia kills you at night, and if you're chosen by Cupid, you.\nWhen you're ready, click the button below and pass the device to the next player."
 }
 
-$("#goMafia").on("click", function (e){
+$("form").on("submit", function (e){
   e.preventDefault();
-  let numOfPlayers = $(".playerNum").val().trim();
+  var numOfPlayers = $(".playerNum").val().trim();
   
   if(numOfPlayers <= 0){
     console.log(numOfPlayers)
@@ -36,11 +36,11 @@ $("#goMafia").on("click", function (e){
   }
   else{
     // Get the number of Mafia and special roles
-  let numOfMafia = $("#mafiaNum").val();
-  let detCheck = document.getElementById("detectiveCheck");
-  let medCheck = document.getElementById("medicCheck");
-  let cupidCheck = document.getElementById("cupidCheck");
-  let tannerCheck = document.getElementById("tannerCheck")
+  var numOfMafia = $("#mafiaNum").val();
+  var detCheck = document.getElementById("detectiveCheck");
+  var medCheck = document.getElementById("medicCheck");
+  var cupidCheck = document.getElementById("cupidCheck");
+  var tannerCheck = document.getElementById("tannerCheck")
   console.log(numOfPlayers);
   console.log(numOfMafia);
 
