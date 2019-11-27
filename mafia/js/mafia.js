@@ -72,12 +72,13 @@ $("form").on("submit", function (e){
     playerArray.push(tannerObj);
     playerArray.shift()
   };
-  console.log(playerArray)
-  // alert(role);
+  console.log(playerArray);
+  
+  
   window.location.href = "player.html"
   }
 });
-// playerArray.push(playerObj, mafiaObj, detectiveObj, medicObj, cupidObj, tannerObj)
+
 $(".findRole").on("click", function (e){
   e.preventDefault();
   if(playerArray.length === 0){
