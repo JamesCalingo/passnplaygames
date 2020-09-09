@@ -1,4 +1,4 @@
-var playerArray = [];
+const playerArray = [];
 // objects for the array (in the future they will be better scoped)
 var playerObj = {
   name: "Civilian",
@@ -22,8 +22,10 @@ var cupidObj = {
 };
 var tannerObj = {
   name: "Tanner",
-  role: "You're a local tanner...but you're not fond of it. You'd rather be literallly anywhere else but this town right now, but there's one problem: the town kinda needs you to stay at your job. However, with the mafia confusion going around, you figure it's a good time to try and trick the town to buying your one way ticket out of town! \ntl;dr: Your goal is to get voted out by town. If this happens, you win! Note that you do NOT win if the mafia kills you at night, and if you're chosen by Cupid, you.\nWhen you're ready, click the button below and pass the device to the next player."
+  role: "You're a local tanner...but you're not fond of it. You'd rather be literallly anywhere else but this town right now, but there's one problem: the town kinda needs you to stay at your job. However, with the mafia confusion going around, you figure it's a good time to try and trick the town to buying your one way ticket out of town! \ntl;dr: Your goal is to get voted out by town. If this happens, you win! Note that you do NOT win if the mafia kills you at night, and if you're chosen by Cupid, you do not fall in love.\nWhen you're ready, click the button below and pass the device to the next player."
 }
+
+
 
 $("form").on("submit", function (e){
   e.preventDefault();
@@ -73,25 +75,63 @@ $("form").on("submit", function (e){
     playerArray.shift()
   };
   console.log(playerArray);
-  
-  
-  window.location.href = "player.html"
+  // sessionStorage.setItem("players", JSON.stringify(playerArray))
+$(".main").html(`<div class="text-center">
+<h1>NOTE: Make sure you are looking at THIS page when you receive the device</h1>
+
+<p>Hello player.</p>
+
+<p>Are you ready to find out your role? Whenever you are, click the button below to begin.</p>
+
+<p>NOTE: DO NOT REFRESH THIS PAGE OR CLOSE THIS BROWSER TAB! These will almost certainly break the game.</p>
+
+<button class="btn btn-lg btn-danger findRole">I'm ready! Let's go!</button>
+</div>
+`)
+  // window.location.href = "player.html"
   }
+  $("document").on("click", ".findRole", function (e){
+    e.preventDefault();
+    console.log("I was clicked!")
+    // let players=sessionStorage.getItem("players")
+    if(playerArray.length === 0){
+      window.location.href = "../index.html"
+    }
+    else{
+      
+  let randNum = Math.floor(Math.random() * playerArray.length)
+  let selection = playerArray[randNum]
+  Swal.fire({
+    title: `You are...\n ${selection.name}`,
+    text: selection.role,
+    confirmButtonText: "HI I'M THE BUTTON"
+  })
+  playerArray.splice(randNum, 1);
+  console.log(playerArray)
+    }
+  })
+  
 });
 
-$(".findRole").on("click", function (e){
+;
+$(document).on("click", ".findRole", function (e){
   e.preventDefault();
+  console.log("I was clicked!")
+  // let players=sessionStorage.getItem("players")
   if(playerArray.length === 0){
     window.location.href = "../index.html"
   }
   else{
+    
 let randNum = Math.floor(Math.random() * playerArray.length)
 let selection = playerArray[randNum]
-Swal.fire({
-  title: `You are a...\n ${selection.name}`,
-  text: selection.role,
-  confirmButtonText: "HI I'M THE BUTTON"
-})
-playerArray.splice(randNum, 1)
+alert(selection.name)
+// Swal.fire({
+//   title: `You are...\n ${selection.name}`,
+//   text: selection.role,
+//   confirmButtonText: "HI I'M THE BUTTON"
+// })
+playerArray.splice(randNum, 1);
+console.log(playerArray)
   }
 })
