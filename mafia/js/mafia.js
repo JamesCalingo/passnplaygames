@@ -33,7 +33,14 @@ $("form").on("submit", function (e){
   
   if(numOfPlayers <= 0){
     console.log(numOfPlayers)
-    alert("There's seriously no one in this town? Is this a ghost town?");
+    Swal.fire("There's seriously no one in this town? Is this a ghost town?");
+    return false
+  }
+  else if(numOfPlayers > 100){
+    Swal.fire({
+      title: "WHOA BUDDY!",
+      text: "You can't have THAT many people playing with you...right? "
+    })
     return false
   }
   else{

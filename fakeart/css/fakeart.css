@@ -2,3 +2,7 @@ body{
   background: magenta;
   color: yellow
 }
+
+.hide{
+  color: magenta;
+}
