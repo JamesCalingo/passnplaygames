@@ -117,7 +117,6 @@ $(".main").html(`<div class="text-center">
 $(document).on("click", ".findRole", function (e){
   e.preventDefault();
   console.log("I was clicked!")
-  // let players=sessionStorage.getItem("players")
   if(playerArray.length === 0){
     window.location.href = "../index.html"
   }
@@ -125,12 +124,12 @@ $(document).on("click", ".findRole", function (e){
     
 let randNum = Math.floor(Math.random() * playerArray.length)
 let selection = playerArray[randNum]
-alert(selection.name)
-// Swal.fire({
-//   title: `You are...\n ${selection.name}`,
-//   text: selection.role,
-//   confirmButtonText: "HI I'M THE BUTTON"
-// })
+
+Swal.fire({
+  title: `You are the...\n ${selection.name}`,
+  text: selection.role,
+  confirmButtonText: "HI I'M THE BUTTON"
+})
 playerArray.splice(randNum, 1);
 console.log(playerArray)
   }
