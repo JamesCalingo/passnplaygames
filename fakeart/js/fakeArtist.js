@@ -1,5 +1,18 @@
-var playerArray = []
-var category
+var playerArray = ["X - you are the Fake Artist!"]
+
+startGame = () =>{
+  console.log(playerArray)
+  $(".main").html(`<div class="text-center">
+  <h1>NOTE: make sure you are looking at THIS page before passing/when you receive the device</h1>
+  
+  <p>When you're ready, click the button below to find out the word...or maybe not.</p>
+  
+  <button class="btn btn-danger btn-lg mt-3 findRole">What's the word?</button>
+  </div>`)
+ 
+  }
+
+
 
 $("#goArtist").on("click", function (e){
   e.preventDefault();
@@ -13,9 +26,15 @@ $("#goArtist").on("click", function (e){
     Swal.fire("Too many artists will make your canvas quite messy. Try to keep it to no more than 15 or so.");
     return false
   }
-  if(!word || !category){
+  else if(!word || !category){
     Swal.fire("How can these artists produce art if they don't know what they're supposed to produce?")
     return false
+  }
+  else if (word === "x" || word === "X"){
+    for(var i = 0; i < numOfPlayers - 1; i++){
+      playerArray.push("X - you are the Fake Artist!");
+    }
+    startGame()
   }
   else{
   console.log(word);
@@ -23,16 +42,7 @@ $("#goArtist").on("click", function (e){
   for(var i = 0; i < numOfPlayers - 1; i++){
     playerArray.push(word)
   }
-  playerArray.push("X - You are the fake artist!")
-  console.log(playerArray)
-  $(".main").html(`<div class="text-center">
-  <h1>NOTE: make sure you are looking at THIS page before passing/when you receive the device</h1>
-  
-  <p>When you're ready, click the button below to find out the word...or maybe not.</p>
-  
-  <button class="btn btn-danger btn-lg mt-3 findRole">What's the word?</button>
-  </div>`)
- 
+  startGame()
   }
 })
 
